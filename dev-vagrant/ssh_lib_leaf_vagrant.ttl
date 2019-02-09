@@ -1,0 +1,20 @@
+;; プライベートIP
+HOST_ADDR = '192.168.33.10'
+;; ユーザ名／SSHキー
+USER_NAME = 'vagrant'
+getdir KEY_FILE
+strconcat KEY_FILE '\.vagrant\machines\default\virtualbox\private_key'
+ 
+;; コマンド組立て 
+COMMAND = HOST_ADDR 
+strconcat COMMAND ' /ssh /2 /auth=publickey /user=' 
+strconcat COMMAND USER_NAME 
+strconcat COMMAND ' /keyfile="' 
+strconcat COMMAND KEY_FILE
+strconcat COMMAND '"' 
+ 
+;; 接続 
+connect COMMAND
+settitle 'LibLeaf Dev Vagrant'
+ 
+end
