@@ -1,6 +1,6 @@
 # Development Environment
 ## How to start
-### vagrant
+### Vagrant
 1. Start vagrant: `vagrant up`
 2. Login vagrant: `vagrant ssh`
 
@@ -18,4 +18,3 @@
     - Import Resolution: `go get -u golang.org/x/tools/cmd/goimports`
     - Smart Linter: `go get -u github.com/alecthomas/gometalinter`
     - Test output with color: `go get -u github.com/kyoh86/richgo`
-
