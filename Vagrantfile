@@ -6,4 +6,5 @@ Vagrant.configure("2") do |config|
     vb.memory = "2048"
   end
   config.vm.provision "docker"
+  config.vm.provision "docker_compose"
 end
