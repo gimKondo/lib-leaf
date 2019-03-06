@@ -1,8 +1,15 @@
-FROM golang:latest
+FROM elixir:1.8.1
 
-LABEL maintainer="gim_kondo"
+ENV NODE_VERSION 8.x
+ENV NPM_VERSION 6.1.0
 
-WORKDIR /go
-ADD . /go
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | bash \
+  && apt install -y nodejs
 
-CMD ["go", "run", "main.go"]
+RUN npm install npm@${NPM_VERSION} -g
+
+RUN mix local.hex --force && \
+  mix archive.install --force hex phx_new 1.4.1 && \
+  mix local.rebar --force
+
+WORKDIR /app

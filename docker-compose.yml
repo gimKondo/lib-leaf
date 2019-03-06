@@ -1,6 +1,21 @@
 version: "3"
 services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=db
   app:
-    build: .
+    # build: .
+    image: gimkondo/lib-leaf
     ports:
-      - 8080:8080
+      - "4000:4000"
+    command: mix phx.server
+    environment:
+      - MIX_ENV=dev
+      - PORT=4000
+    volumes:
+      - .:/app
+    links:
+      - db
