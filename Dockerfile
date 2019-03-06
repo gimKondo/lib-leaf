@@ -1,4 +1,4 @@
-FROM elixir:latest
+FROM elixir:1.8.1
 
 ENV NODE_VERSION 8.x
 ENV NPM_VERSION 6.1.0
