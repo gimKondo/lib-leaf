@@ -10,7 +10,7 @@ jobs:  # basic units of work in a run
         environment:  # environment variables for database
           POSTGRES_USER: postgres
           POSTGRES_DB: lib_leaf_test
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD:
 
     working_directory: ~/app  # directory where steps will run
 
