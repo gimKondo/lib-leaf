@@ -14,5 +14,5 @@ config :lib_leaf, LibLeaf.Repo,
   username: "postgres",
   password: "postgres",
   database: "lib_leaf_test",
-  hostname: "localhost",
+  hostname: "db",
   pool: Ecto.Adapters.SQL.Sandbox
