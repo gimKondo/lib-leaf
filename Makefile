@@ -12,6 +12,8 @@ version:
 	docker run -it $(CONTAINER_NAME) bash -c 'elixir --version && mix phx.new -v'
 repl:
 	docker-compose run app iex -S mix phx.server
+migrate:
+	docker-compose run app mix ecto.migrate
 .PHONY: test
 test:
 	docker-compose run -e MIX_ENV=test app mix test
